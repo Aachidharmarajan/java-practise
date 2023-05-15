@@ -9,7 +9,7 @@ public class Arraypractise {
     	  myArray[i]=input.nextInt();
       }
       for(int j=0;j<myArray.length;j++) {
-    	System.out.println(myArray[j]);
+    	System.out.println(myArray[j]*2);
       }
 	}
 
