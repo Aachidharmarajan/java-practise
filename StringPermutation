@@ -1,0 +1,36 @@
+import java.util.*;
+import java.util.ArrayList;
+public class Namepermutations {
+
+	public static void main(String[] args) {
+	
+		Scanner input = new Scanner(System.in);
+	
+		ArrayList<String> firstName = new ArrayList<>();
+		ArrayList<String> lastName = new ArrayList<>();
+		String name;
+		String first;
+		String last;
+		int indexOfspace ;
+		for(int i=0;i<5;i++) {
+			System.out.println("Enter name"+ " " +i);
+			name=input.nextLine();
+			indexOfspace = name.indexOf(" ");
+			first=name.substring(0,indexOfspace);
+			firstName.add(first);
+			last = name.substring(indexOfspace+1);
+			lastName.add(last);
+			
+		
+			
+		}
+		for(int i=0;i<firstName.size();i++) {
+			for(int j=0;j<lastName.size();j++ ) {
+				System.out.println(firstName.get(i)+ " " +lastName.get(j));
+			}
+			
+	}
+		
+	}
+
+}
