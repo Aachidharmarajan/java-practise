@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.*;
+public class Parallel {
+
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		ArrayList<String> myName = new ArrayList<>();
+		ArrayList<Integer> myAge = new ArrayList<>();
+		String name;
+	
+		int age;
+		for(int i=0;i<5;i++) {
+			System.out.println("Enter a name");
+			name = input.nextLine();
+			System.out.println("Enter a age");
+			age = input.nextInt();
+			input.nextLine();
+			myName.add(name);
+			myAge.add(age);
+			
+		}
+	
+		for(int i=0;i<myName.size();i++) {
+			System.out.println(myName.get(i) + " is"+myAge.get(i));
+		}
+		
+
+	}
+
+}
