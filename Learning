@@ -1,0 +1,58 @@
+import java.util.*;
+import java.util.ArrayList;
+public class Learning{
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		ArrayList<String> myCourse= new ArrayList<>();
+		ArrayList<Integer> myFees = new ArrayList<>();
+System.out.println("HAPPY LEARNING....");
+		System.out.println();
+		System.out.println("!...Available courses...!");
+		System.out.println();
+		myCourse.add("Maths");
+		myCourse.add("Physics");
+		myCourse.add("Chemistry");
+		myCourse.add("Biology");
+		myFees.add(200);
+		myFees.add(400);
+		myFees.add(600);
+		myFees.add(300);
+		String course = " ";
+		int fees = 0;
+		
+		for(int i=0;i<myCourse.size();i++) {
+			 course = myCourse.get(i);
+		      fees =myFees.get(i);
+		      System.out.println(  course + "  " + "-"+ " " + fees);
+		}
+		System.out.println("Select your Course : ");
+                 course = input.nextLine();
+		switch(course) {
+		case "Maths":
+			System.out.println("This is Four Months course and per month $200");
+			break;
+		case "Physics":
+			System.out.println("This is Five Months course and per month $400");
+			break;
+		case "Chemistry":
+			System.out.println("This is Three Months course and per $600");
+			break;
+		case "Biology":
+			System.out.println("This is Eight Months course and per month $300");
+			break;
+		 default:
+			 System.out.println("Not available");
+			
+		}
+		     
+		     
+			}
+					
+		
+
+		
+
+	}
+
+
