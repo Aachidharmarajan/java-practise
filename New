@@ -1,0 +1,85 @@
+import java.util.*;
+public class Person{
+    String name, Dob, City,Work,Addre,Gender;
+   public Person(String name,String Dob,String City,String Work,String Addre,String Gender){
+       this.name=name;
+       this.Dob=Dob;
+       this. City=City;
+       this.Work = Work;
+       this.Addre=Addre;
+       this.Gender=Gender;
+}
+   public String getName() {
+	   return name;
+   }
+   public String getDob() {
+	   return Dob;
+   }
+   public String getCity() {
+	   return City;
+   }
+   public String getWork() {
+	   return Work;
+   }
+   public String getAddre() {
+	   return Addre;
+   }
+   public String getGender() {
+	   return Gender;
+   }
+}
+import java.util.ArrayList;
+import java.util.*;
+
+import java.util.List;
+public class PersonsExample{
+    public static void main(String[] args) {
+        List<Person> list = new ArrayList<>();
+Scanner input = new Scanner(System.in);
+        list.add(new Person("Sharmila", "21-01-2001", "Coimbatore", "Hcl", "56-8, Gandhipuram", "Female"));
+        list.add(new Person("Pavithra", "20-08-1999", "Coimbatore", "Zoho", "456,Sholinganallur", "Female"));
+        list.add(new Person("Surya", "09-01-2001", "Erode", "Amazon", "78-6,Brooks", "Male"));
+        list.add(new Person("Mukesh", "20-07-2000", "Bangalore"," L&T","89-7,Jigani","Female"));
+        list.add(new Person("Aachi","08-10-2000","Hyderabad","Hcl","63-4,NorthStreet","Female"));        
+        System.out.println("Enter CityName:");
+        String searchCity = input.nextLine();
+        List<Person> personsInCity = new ArrayList<>();
+        for (Person person : list) {
+            if (person.getCity().equals(searchCity)) {
+                personsInCity.add(person);
+            }
+        }
+        System.out.println("Persons in " + searchCity + ":");
+        for (Person person : personsInCity) {
+            System.out.println(person.getName());
+        }
+        System.out.println();
+
+
+        System.out.println("Enter CompanyName: ");
+        String searchCompany = input.nextLine();
+        int countPersonsInCompany = 0;
+        for (Person person : list) {
+            if (person.getWork().equals(searchCompany)) {
+                countPersonsInCompany++;
+            }
+        }
+        System.out.println("Number of persons working at " + searchCompany + ": " + countPersonsInCompany);
+        System.out.println();
+
+
+        System.out.println("Enter DOB:");
+        String searchDob = input.nextLine();
+        System.out.println("Persons with the same DOB (" + searchDob + "):");
+        for (Person person : list) {
+            if (person.getDob().equals(searchDob)) {
+                System.out.println(person.getName());
+            }
+            
+        }
+        System.out.println();
+
+      
+    }
+}
+
