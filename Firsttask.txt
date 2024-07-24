@@ -1,0 +1,126 @@
+ class Person{
+    String name, Dob, City,Work,Addre,Gender;
+   public Person(String name,String Dob,String City,String Work,String Addre,String Gender){
+       this.name=name;
+       this.Dob=Dob;
+       this. City=City;
+       this.Work = Work;
+       this.Addre=Addre;
+       this.Gender=Gender;
+}
+   public String getName() {
+	   return name;
+   }
+   public String getDob() {
+	   return Dob;
+   }
+   public String getCity() {
+	   return City;
+   }
+   public String getWork() {
+	   return Work;
+   }
+   public String getAddre() {
+	   return Addre;
+   }
+   public String getGender() {
+	   return Gender;
+   }
+}
+import java.util.ArrayList;
+import java.util.*;
+
+import java.util.List;
+import java.util.*;
+public class PersonsExample{
+    public static void main(String[] args) {
+        List<Person> list = new ArrayList<>();
+         Scanner input = new Scanner(System.in);
+        list.add(new Person("Sharmila", "21-01-2001", "coimbatore", "hcl", "56-8, Gandhipuram", "Female"));
+        list.add(new Person("Pavithra", "20-08-1999", "coimbatore", "zoho", "456,Sholinganallur", "Female"));
+        list.add(new Person("Surya", "09-01-2001", "erode", "amazon", "78-6,Brooks", "Male"));
+        list.add(new Person("Mukesh", "20-07-2000", "bangalore","l&t","89-7,Jigani","Female"));
+        list.add(new Person("Aachi","08-10-2000","hyderabad","hcl","63-4,NorthStreet","Female")); 
+        list.add(new Person("Nisha","05-11-1999","hyderabad","zoho","13-7,hyderabad","Female")); 
+        list.add(new Person("Arthi","08-10-2001","chennai","l&t","15-4,ecr","Female")); 
+        list.add(new Person("Yuva","10-01-1998","bangalore","hcl","43-4,bommasandra","Male")); 
+        list.add(new Person("kishore","02-06-1998","erode","zoho","76-4,erode","Male")); 
+        list.add(new Person("Dhilip","02-06-1998","chennai","amazon","15-4,chennai","Male"));        
+        System.out.println("Enter CityName:");
+        String searchCity = input.nextLine();
+        List<Person> personsInCity = new ArrayList<>();
+        for (Person person : list) {
+            if (person.getCity().equals(searchCity)) {
+                personsInCity.add(person);
+            }
+        }
+        System.out.println("Persons in " + searchCity + ":");
+        int len = personsInCity.size();
+        if(len >0){
+        for (Person person : personsInCity) {
+            System.out.println(person.getName());
+        }
+      }else{
+        System.out.println("No one is there");
+      }
+        System.out.println();
+
+
+        System.out.println("Enter CompanyName: ");
+        String searchCompany = input.nextLine();
+        int countPersonsInCompany = 0;
+        for (Person person : list) {
+            if (person.getWork().equals(searchCompany)) {
+                countPersonsInCompany++;
+            }
+        }
+        System.out.println("Number of persons working at " + searchCompany + ": " + countPersonsInCompany);
+        System.out.println();
+
+
+        System.out.println("Enter DOB:");
+        String searchDob = input.nextLine();
+        System.out.println("Persons with the same DOB (" + searchDob + "):");
+        int count =0;
+        for (Person person : list) {
+            if (person.getDob().equals(searchDob)) {
+                count++;
+            }
+            }
+            if(count>0){
+                for(Person person:list){
+                    if(person.getDob().equals(searchDob)){
+                        System.out.println(person.getName());
+                    }
+                }
+            }
+             else{
+                    System.out.println("No one is there");
+                }    
+               
+            
+        System.out.println();
+        
+         int fcount=0;
+          int mcount =0;
+        System.out.println("Enter cityName: ");
+          List<Person> cityforratio = new ArrayList<>();
+           String ratiocity = input.nextLine();
+              for(Person person: list){
+                if(person.getCity().equals(ratiocity)){
+                 cityforratio.add(person);
+        }
+        
+    }
+  for(Person person:cityforratio){
+      if(person.getGender().equals("Female")){
+          fcount++;
+      }
+      else {
+         mcount++;
+      }
+    }
+ System.out.println("Gender Ratio is "+ fcount +" :"+ mcount);
+}
+}
+
